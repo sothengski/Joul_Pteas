@@ -30,4 +30,4 @@
         android:layout_width="match_parent"
         app:menu="@menu/menu_tab"
         android:layout_height="wrap_content"></android.support.design.widget.BottomNavigationView>
-w</LinearLayout>
+</LinearLayout>

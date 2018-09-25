@@ -41,23 +41,29 @@ public class TabActivity extends AppCompatActivity implements BottomNavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         if(menuItem.getItemId() == R.id.menu_home) {
             HomeFragment homeFragment = new HomeFragment();
-            displayFragment(homeFragment);
+//            displayFragment(homeFragment);
+            Utility.displayFragment(homeFragment,getSupportFragmentManager(),R.id.lyt_fragment_container);
         }
         else if (menuItem.getItemId() == R.id.menu_profile){
             ProfileFragment profileFragment = new ProfileFragment();
-            displayFragment(profileFragment);
+//            displayFragment(profileFragment);
+            Utility.displayFragment(profileFragment,getSupportFragmentManager(),R.id.lyt_fragment_container);
         }
+
         else{
             SettingFragment settingFragment = new SettingFragment();
-            displayFragment(settingFragment);
+//            displayFragment(settingFragment);
+            Utility.displayFragment(settingFragment,getSupportFragmentManager(),R.id.lyt_fragment_container);
         }
 //        return false;
         return true;
     }
-    private void displayFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.lyt_fragment_container,fragment);
-        fragmentTransaction.commit();
-    }
+
+    //or
+//    private void displayFragment(Fragment fragment){
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.lyt_fragment_container,fragment);
+//        fragmentTransaction.commit();
+//    }
 }
